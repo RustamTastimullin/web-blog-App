@@ -1,18 +1,35 @@
-package ru.springapp.blog.models;
+package ru.springapp.blog.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "post")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    private String title, annonce, full_text;
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "annonce")
+    private String annonce;
+
+    @Column(name = "full_text")
+    private String fullText;
+
+    @Column(name = "views")
     private int views;
+
+    public Post() {
+    }
+
+    public Post(String title, String annonce, String fullText) {
+        this.title = title;
+        this.annonce = annonce;
+        this.fullText = fullText;
+    }
 
     public Long getId() {
         return id;
@@ -38,12 +55,12 @@ public class Post {
         this.annonce = annonce;
     }
 
-    public String getFull_text() {
-        return full_text;
+    public String getFullText() {
+        return fullText;
     }
 
-    public void setFull_text(String full_text) {
-        this.full_text = full_text;
+    public void setFullText(String fullText) {
+        this.fullText = fullText;
     }
 
     public int getViews() {
@@ -52,14 +69,5 @@ public class Post {
 
     public void setViews(int views) {
         this.views = views;
-    }
-
-    public Post() {
-    }
-
-    public Post(String title, String annonce, String full_text) {
-        this.title = title;
-        this.annonce = annonce;
-        this.full_text = full_text;
     }
 }

@@ -1,27 +1,39 @@
-package ru.springapp.blog.models;
+package ru.springapp.blog.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Zakupki {
+@Table(name = "purchase")
+public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    private String inNumber, outNumber, link, price, status;
+    @Column(name = "in_number")
+    private String inNumber;
 
-    public Zakupki(String inNumber, String outNumber, String link, String price, String status) {
+    @Column(name = "out_number")
+    private String outNumber;
+
+    @Column(name = "link")
+    private String link;
+
+    @Column(name = "price")
+    private String price;
+
+    @Column(name = "status")
+    private String status;
+
+    public Purchase() {
+    }
+
+    public Purchase(String inNumber, String outNumber, String link, String price, String status) {
         this.inNumber = inNumber;
         this.outNumber = outNumber;
         this.link = link;
         this.price = price;
         this.status = status;
-    }
-
-    public Zakupki() {
     }
 
     public Long getId() {

@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 </head>
 <body>
-<header th:insert="blocks/header-zakupki :: header"></header>
+<header th:insert="blocks/headerPurchase :: header"></header>
 
 <div class="container mt-5 mb-5">
     <h1>Редактирование закупки</h1>
-    <div th:each="element : ${zakupki}">
+    <div th:each="element : ${purchases}">
         <form method="post">
             <input type="text" th:value="${element.inNumber}" name="inNumber" placeholder="Внутренний номер" class="form-control"><br>
             <input type="text" th:value="${element.outNumber}" name="outNumber" placeholder="Реестровый номер" class="form-control"><br>
@@ -19,7 +19,7 @@
             <input type="text" th:value="${element.status}" name="status" placeholder="Статус" class="form-control"><br>
             <button type="submit" class="btn btn-success">Обновить</button>
         </form>
-        <form th:action="'/zakupki/' + ${element.id} + '/remove'" method="post">
+        <form th:action="'/purchase/' + ${element.id} + '/remove'" method="post">
             <br><button class="btn btn-warning" type="submit">Удалить</button><br>
         </form>
     </div>

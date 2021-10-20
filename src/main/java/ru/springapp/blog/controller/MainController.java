@@ -1,4 +1,4 @@
-package ru.springapp.blog.controllers;
+package ru.springapp.blog.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,17 +9,17 @@ public class MainController {
 
     @GetMapping("/moreProjects")
     public String moreProjects(Model model) {
-        model.addAttribute("title", "Greeting page!");
+        model.addAttribute("title", "Other projects!");
         return "moreProjects";
     }
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute( "title", "Главная страница!");
-        return "blogAppTemplates/blog-main";
+        model.addAttribute( "title", "Main page!");
+        return "blogTemplates/blogMain";
     }
     @GetMapping("/about")
     public String about(Model model) {
-        model.addAttribute( "title", "Страница обо мне!");
+        model.addAttribute( "title", "About!");
         return "about";
     }
 

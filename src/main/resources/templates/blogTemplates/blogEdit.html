@@ -14,7 +14,7 @@
         <form method="post">
             <input type="text" th:value="${element.title}" name="title" placeholder="Введите название статьи" class="form-control"><br>
             <input type="text" th:value="${element.annonce}" name="annonce" placeholder="Введите описание" class="form-control"><br>
-            <textarea name="full_text" placeholder="Введите текст статьи" class="form-control" th:text="${element.full_text}" /><br>
+            <textarea name="fullText" placeholder="Введите текст статьи" class="form-control" th:text="${element.fullText}" /><br>
             <button type="submit" class="btn btn-success">Обновить</button>
         </form>
     </div>
