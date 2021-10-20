@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Новая закупка</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header-zakupki :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Добавление новой закупки</h1>
+    <form action="/zakupki/add" method="post">
+        <input type="text" name="inNumber" placeholder="Введите внутренний номер закупки" class="form-control"><br>
+        <input type="text" name="outNumber" placeholder="Введите реестровый (внешний) номер закупки" class="form-control"><br>
+        <input type="text" name="link" placeholder="Введите ссылку на закупку" class="form-control"><br>
+        <input type="text" name="price" placeholder="Введите НМЦК" class="form-control"><br>
+        <input type="text" name="status" placeholder="Введите статус закупки" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Добавить закупку</button>
+    </form>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

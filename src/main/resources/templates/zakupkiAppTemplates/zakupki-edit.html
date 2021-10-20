@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Редактирование</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header-zakupki :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Редактирование закупки</h1>
+    <div th:each="element : ${zakupki}">
+        <form method="post">
+            <input type="text" th:value="${element.inNumber}" name="inNumber" placeholder="Внутренний номер" class="form-control"><br>
+            <input type="text" th:value="${element.outNumber}" name="outNumber" placeholder="Реестровый номер" class="form-control"><br>
+            <input type="text" th:value="${element.link}" name="link" placeholder="Ссылка на источник" class="form-control"><br>
+            <input type="text" th:value="${element.price}" name="price" placeholder="НМЦК" class="form-control"><br>
+            <input type="text" th:value="${element.status}" name="status" placeholder="Статус" class="form-control"><br>
+            <button type="submit" class="btn btn-success">Обновить</button>
+        </form>
+        <form th:action="'/zakupki/' + ${element.id} + '/remove'" method="post">
+            <br><button class="btn btn-warning" type="submit">Удалить</button><br>
+        </form>
+    </div>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
