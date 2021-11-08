@@ -12,15 +12,13 @@ public class MainController {
         model.addAttribute("title", "Other projects!");
         return "moreProjects";
     }
-    @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute( "title", "Main page!");
-        return "blogTemplates/blogMain";
-    }
+
     @GetMapping("/about")
     public String about(Model model) {
         model.addAttribute( "title", "About!");
         return "about";
     }
+
+
 
 }
