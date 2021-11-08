@@ -15,8 +15,12 @@ import java.util.Optional;
 
 @Controller
 public class PurchaseController {
+    private final PurchaseRepository purchaseRepository;
+
     @Autowired
-    private PurchaseRepository purchaseRepository;
+    public PurchaseController(PurchaseRepository purchaseRepository) {
+        this.purchaseRepository = purchaseRepository;
+    }
 
     @GetMapping("/purchase")
     public String purchaseMain(Model model) {
