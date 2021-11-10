@@ -1,7 +1,6 @@
 package ru.springapp.blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.springapp.blog.model.Post;
-import ru.springapp.blog.model.User;
 import ru.springapp.blog.repo.PostRepository;
 
 import java.util.ArrayList;
@@ -19,7 +17,6 @@ import java.util.Optional;
 public class BlogController {
 
     private final PostRepository postRepository;
-
     @Autowired
     public BlogController(PostRepository postRepository) {
         this.postRepository = postRepository;
@@ -38,12 +35,11 @@ public class BlogController {
     }
 
     @PostMapping("/blog/add")
-    public String blogPostAdd(
-            @AuthenticationPrincipal User user,
-            @RequestParam String title,
-            @RequestParam String annonce,
-            @RequestParam String fullText, Model model) {
-        Post post = new Post(title, annonce, fullText, user);
+    public String blogPostAdd(@RequestParam String title,
+                              @RequestParam String annonce,
+                              @RequestParam String fullText,
+                              Model model) {
+        Post post = new Post(title, annonce, fullText);
         postRepository.save(post);
         return "redirect:/blog";
     }

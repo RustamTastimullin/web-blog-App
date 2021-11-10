@@ -15,8 +15,8 @@ import java.util.Optional;
 
 @Controller
 public class PurchaseController {
-    private final PurchaseRepository purchaseRepository;
 
+    private final PurchaseRepository purchaseRepository;
     @Autowired
     public PurchaseController(PurchaseRepository purchaseRepository) {
         this.purchaseRepository = purchaseRepository;

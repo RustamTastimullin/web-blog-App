@@ -22,22 +22,13 @@ public class Post {
     @Column(name = "views")
     private int views;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private User author;
-
-    public String getAuthorName() {
-        return author != null ? author.getUsername() : "<none>";
-    }
-
     public Post() {
     }
 
-    public Post(String title, String annonce, String fullText, User user) {
+    public Post(String title, String annonce, String fullText) {
         this.title = title;
         this.annonce = annonce;
         this.fullText = fullText;
-        this.author = user;
     }
 
     public Long getId() {
@@ -78,13 +69,5 @@ public class Post {
 
     public void setViews(int views) {
         this.views = views;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
     }
 }
