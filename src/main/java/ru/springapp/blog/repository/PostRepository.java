@@ -1,4 +1,4 @@
-package ru.springapp.blog.repo;
+package ru.springapp.blog.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import ru.springapp.blog.model.Post;

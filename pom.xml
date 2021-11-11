@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>ru.springapp</groupId>
-	<artifactId>blog</artifactId>
+	<artifactId>demoApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blog</name>
+	<name>demoApp</name>
 	<description>Blog project for Spring Boot</description>
 
 	<properties>

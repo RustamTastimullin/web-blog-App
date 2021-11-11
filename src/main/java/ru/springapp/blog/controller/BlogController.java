@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.springapp.blog.model.Post;
-import ru.springapp.blog.repo.PostRepository;
+import ru.springapp.blog.repository.PostRepository;
 
 import java.util.ArrayList;
 import java.util.Optional;
